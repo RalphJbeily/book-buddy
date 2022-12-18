@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# Welcome to Book Buddy
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ Your online book author search engine
 
-## Available Scripts
+## Running the project
 
-In the project directory, you can run:
+First, make sure to change the `CLIENT_ID` located in the below path:
 
-### `npm start`
+`/src/config/auth.js`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Now in the project root directory, run:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```cmd
+npm start
+```
 
-### `npm test`
+## What is Book Buddy?
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Book Buddy is an online search engine for book authors that helps individuals locate books digitally.
 
-### `npm run build`
+### How to use Book Buddy
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. The user must login with Google account credentials
+2. Then the user is redirected to the author search page
+3. The user can search for a specific author and get the list of results
+4. Once the user clicks on one of the books it will redirect to the book viewer page
+5. In the book viewer page the user will see an overview of the book along with its details and will be able to download the book either epub or pdf
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project Structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This project was created using `create-react-app`
 
-### `npm run eject`
+### Directories and Files
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. The `api` directory contains the two endpoints used to `get` and `list` the volume details and volumes list respectively
+2. The `assets` directory contains the images used in the project
+3. The `config` directory contains configurations required for the project:  
+   a. `api-endpoints.js` file for all the endpoints used for the apis  
+   b. `auth.js` file for everything authentication related  
+   c. `server-codes.js` file for all the server response statuses  
+   d. `strings.js` file for all the texts used across all the pages
+4. The `containers` directory contains the pages initialization and api calls.
+5. The `pages` directory contains the UI for the pages and data rendering
+6. The `router` directory contains the logic and routes used to navigate across the pages
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Packages Used
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* `react-oauth/google` for Google sign in and authentication
+* `react-router-dom` for pages navigation
+* `styled-components` for components styling
+* `mui/material` and `mui/icons-material` for components
+* `axios` http client for api calls
