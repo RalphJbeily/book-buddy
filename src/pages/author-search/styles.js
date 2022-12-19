@@ -38,6 +38,12 @@ export const GridContainer = styled.div`
     display: flex;
     flex-direction: column;
   }
+
+  @media (max-width: 64rem) {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const GridItem = styled.div`

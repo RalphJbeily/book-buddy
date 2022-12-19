@@ -10,11 +10,23 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
   }
+
+  @media (max-width: 64rem) {
+    gap: 12px;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const LeftContainer = styled.div`
   width: 50%;
+
   @media (max-width: 48rem) {
+    display: none;
+  }
+
+  @media (max-width: 64rem) {
     display: none;
   }
 `;
@@ -33,6 +45,10 @@ export const RightContainer = styled.div`
   align-items: center;
 
   @media (max-width: 48rem) {
+    width: 100%;
+  }
+
+  @media (max-width: 64rem) {
     width: 100%;
   }
 `;

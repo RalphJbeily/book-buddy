@@ -10,6 +10,12 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
   }
+
+  @media (max-width: 64rem) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const ViewerCanvas = styled.div`
@@ -20,6 +26,11 @@ export const ViewerCanvas = styled.div`
     width: 100%;
     height: 350px;
   }
+
+  @media (max-width: 64rem) {
+    width: 100%;
+    height: 450px;
+  }
 `;
 
 export const RightContainer = styled.div`
@@ -29,6 +40,10 @@ export const RightContainer = styled.div`
   flex-direction: column;
 
   @media (max-width: 48rem) {
+    align-items: center;
+  }
+
+  @media (max-width: 64rem) {
     align-items: center;
   }
 `;

@@ -2,7 +2,7 @@
   "name": "book-buddy",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ralphjbeily.github.io",
+  "homepage": "https://ralphjbeily.github.io/book-buddy",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
