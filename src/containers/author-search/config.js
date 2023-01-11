@@ -10,3 +10,5 @@ export const ORDER_BY = {
   NEWEST: 'newest',
   RELEVANCE: 'relevance',
 };
+
+export const MAX_RESULTS = 40;

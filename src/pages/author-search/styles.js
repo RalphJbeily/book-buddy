@@ -1,5 +1,12 @@
 import styled from 'styled-components';
 
+export const LogoutContainer = styled.div`
+  position: absolute;
+  right: 0;
+  margin: 24px;
+  cursor: pointer;
+`;
+
 export const Container = styled.div`
   height: 100vh;
   display: flex;
@@ -10,16 +17,6 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h1``;
-
-export const StyledSearchInput = styled.input`
-  width: 50%;
-  height: 30px;
-  padding: 5px;
-  margin-bottom: 20px;
-  border-radius: 3px;
-  border: 1px solid black;
-  background: lightgray;
-`;
 
 export const NoSearchResultImage = styled.img`
   width: 50%;

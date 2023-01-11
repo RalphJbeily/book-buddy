@@ -5,6 +5,7 @@ import URLs from '../../config/api-endpoints';
 import {
   AUTHOR,
   BOOK_NOT_EMBEDED,
+  CANVAS_STILL_LOADING,
   DOWNLOAD_LINKS,
   EPUB,
   LANGUAGE,
@@ -12,7 +13,6 @@ import {
   PAGE_COUNT,
   PDF,
   PUBLISHER,
-  SCRIPT_NOT_LOADED,
   TITLE,
 } from '../../config/strings';
 
@@ -22,7 +22,6 @@ import {
   LabelValueContainer,
   Link,
   RightContainer,
-  ScriptNotLoaded,
   Value,
   ViewerCanvas,
 } from './styles';
@@ -77,50 +76,48 @@ const BookViewer = (volumeDetails: { [key: string]: any }) => {
   }, [id, isLoaded]);
 
   return (
-    <>
+    <Container>
       {isLoaded ? (
-        <Container>
-          <ViewerCanvas ref={canvasRef}></ViewerCanvas>
-          <RightContainer>
-            <LabelValueContainer>
-              <Label>{TITLE}</Label>
-              <Value>{volumeInfo?.title || NOT_AVAILABLE}</Value>
-            </LabelValueContainer>
-            {volumeInfo?.authors?.map((author, index) => (
-              <LabelValueContainer key={`${AUTHOR}-${index}`}>
-                <Label>{`${AUTHOR} ${index + 1}:`}</Label>
-                <Value>{author}</Value>
-              </LabelValueContainer>
-            ))}
-            <LabelValueContainer>
-              <Label>{PAGE_COUNT}</Label>
-              <Value>{volumeInfo?.pageCount || NOT_AVAILABLE}</Value>
-            </LabelValueContainer>
-            <LabelValueContainer>
-              <Label>{PUBLISHER}</Label>
-              <Value>{volumeInfo?.publisher || NOT_AVAILABLE}</Value>
-            </LabelValueContainer>
-            <LabelValueContainer>
-              <Label>{LANGUAGE}</Label>
-              <Value>{volumeInfo?.language || NOT_AVAILABLE}</Value>
-            </LabelValueContainer>
-            {(isEpubAvailable || isPdfAvailable) && (
-              <LabelValueContainer>
-                <Label>{DOWNLOAD_LINKS}</Label>
-                {isEpubAvailable && (
-                  <Link href={accessInfo?.epub?.acsTokenLink}>{EPUB}</Link>
-                )}
-                {isPdfAvailable && (
-                  <Link href={accessInfo?.pdf?.acsTokenLink}>{PDF}</Link>
-                )}
-              </LabelValueContainer>
-            )}
-          </RightContainer>
-        </Container>
+        <ViewerCanvas ref={canvasRef}></ViewerCanvas>
       ) : (
-        <ScriptNotLoaded>{SCRIPT_NOT_LOADED}</ScriptNotLoaded>
+        <ViewerCanvas>{CANVAS_STILL_LOADING}</ViewerCanvas>
       )}
-    </>
+      <RightContainer>
+        <LabelValueContainer>
+          <Label>{TITLE}</Label>
+          <Value>{volumeInfo?.title || NOT_AVAILABLE}</Value>
+        </LabelValueContainer>
+        {volumeInfo?.authors?.map((author, index) => (
+          <LabelValueContainer key={`${AUTHOR}-${index}`}>
+            <Label>{`${AUTHOR} ${index + 1}:`}</Label>
+            <Value>{author}</Value>
+          </LabelValueContainer>
+        ))}
+        <LabelValueContainer>
+          <Label>{PAGE_COUNT}</Label>
+          <Value>{volumeInfo?.pageCount || NOT_AVAILABLE}</Value>
+        </LabelValueContainer>
+        <LabelValueContainer>
+          <Label>{PUBLISHER}</Label>
+          <Value>{volumeInfo?.publisher || NOT_AVAILABLE}</Value>
+        </LabelValueContainer>
+        <LabelValueContainer>
+          <Label>{LANGUAGE}</Label>
+          <Value>{volumeInfo?.language || NOT_AVAILABLE}</Value>
+        </LabelValueContainer>
+        {(isEpubAvailable || isPdfAvailable) && (
+          <LabelValueContainer>
+            <Label>{DOWNLOAD_LINKS}</Label>
+            {isEpubAvailable && (
+              <Link href={accessInfo?.epub?.acsTokenLink}>{EPUB}</Link>
+            )}
+            {isPdfAvailable && (
+              <Link href={accessInfo?.pdf?.acsTokenLink}>{PDF}</Link>
+            )}
+          </LabelValueContainer>
+        )}
+      </RightContainer>
+    </Container>
   );
 };
 

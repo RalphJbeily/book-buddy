@@ -1,3 +1,4 @@
+export const LOGIN = '/';
 export const AUTHOR_SEARCH = '/author-search';
 export const BOOK_VIEWER = '/book-viewer/:id?';
 
